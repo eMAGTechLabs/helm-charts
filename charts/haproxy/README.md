@@ -13,8 +13,6 @@ Source code can be found [here](https://github.com/eMAGTechLabs/helm-charts)
 - haproxy 2.1
 
 
-## Chart Values
-
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
@@ -38,6 +36,8 @@ Source code can be found [here](https://github.com/eMAGTechLabs/helm-charts)
 | resources | object | `{}` | resource limits and request for container |
 | securityContext | object | `{}` |  |
 | service.type | string | `"ClusterIP"` |  |
+| serviceAccount.annotations | object | `{}` |  |
+| serviceAccount.create | bool | `true` |  |
 | serviceMonitor.additionalLabels | object | `{}` |  |
 | serviceMonitor.enabled | bool | `false` | If the operator is installed in your cluster, set to true to create a ServiceMonitor |
 | serviceMonitor.interval | string | `"15s"` |  |
