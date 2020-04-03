@@ -29,4 +29,5 @@ Currently the charts are manually tested against Kubernetes 1.14
 This GitHub repository contains both sources and packages for helm charts developed by emagtechlabs.
 
 The `/charts` directory contains sources of helm charts
+
 The `/packages` directory contains packaged charts 
