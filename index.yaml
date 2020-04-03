@@ -3,10 +3,10 @@ entries:
   haproxy:
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2020-04-03T15:39:53.194611951Z"
+    created: "2020-04-03T15:42:03.430031296Z"
     description: |
       HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
-    digest: d7bdb4c27f92ae2af6f7a02b6130cc11bad7eba3f28fc338ebb49cf225317946
+    digest: 9b03855c3265958c2d61494b606490cd5f0b47127408c79b2005ca8c2d870cae
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
     kubeVersion: '>1.14'
@@ -20,4 +20,4 @@ entries:
     urls:
     - https://emagtechlabs.github.io/helm-charts/packages/haproxy-0.1.0.tgz
     version: 0.1.0
-generated: "2020-04-03T15:39:53.193714056Z"
+generated: "2020-04-03T15:42:03.429255184Z"
