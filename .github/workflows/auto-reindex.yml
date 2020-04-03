@@ -20,12 +20,10 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     
-    - name: Use helm latest version
-      uses: azure/setup-helm@v1
-      with:
-          version: "3"
-      id: install
-    
+    - name: Install helm 3
+      run: |
+        curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+
     - name: Package existing charts
       run: |
         ./index-repository.sh
