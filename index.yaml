@@ -3,13 +3,13 @@ entries:
   haproxy:
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2020-04-03T12:12:51.95259681Z"
+    created: "2020-04-03T12:14:58.994843124Z"
     description: A Helm chart for Kubernetes
-    digest: 776e03d490d733d1ed49b8adec89c4881d50f7f21e96147ca899bc20a5b9f5f1
+    digest: 32717e1ac031601a0e20b6101bbb2877552f6e9b9542954c7bb066bf11f41bcc
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
     name: haproxy
     type: application
     urls:
     - https://emagtechlabs.github.io/helm-charts/packages/haproxy-0.1.0.tgz
     version: 0.1.0
-generated: "2020-04-03T12:12:51.95173837Z"
+generated: "2020-04-03T12:14:58.993648029Z"
