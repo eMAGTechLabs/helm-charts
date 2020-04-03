@@ -1,0 +1,149 @@
+replicaCount: 1
+
+image:
+  repository: haproxy
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 1
+  #   memory: 1024Mi
+  # requests:
+  #  cpu: 500m
+  #  memory: 512Mi
+
+## Ports exposed by the haproxy
+ports:
+  metrics:
+    protocol: TCP
+    containerPort: 8404
+#  my-backend:
+#    protocol: TCP
+#    containerPort: 23306
+#  my-second-backend:
+#    protocol: TCP
+#    containerPort: 16384
+
+## Define configuration files
+# We recommend the split of configs into multiple files
+# every port opened in configs should be added to the ports section
+configFiles:
+  global.cfg: |-
+    global
+      maxconn   10000
+      log       127.0.0.1 local0
+      nbproc    1
+      nbthread  1
+
+  defaults.cfg: |-
+    defaults
+      backlog   2000
+      timeout   connect 10s
+      timeout   client 30s
+      timeout   server 30s
+      timeout   check 10s
+      log       global
+      mode      tcp
+      option    httplog
+      maxconn   3000
+
+  metrics.cfg: |-
+    frontend metrics
+      mode          http
+      log           global
+      maxconn       10
+      bind          *:8404
+      option        http-use-htx
+      http-request  use-service prometheus-exporter if { path /metrics }
+      stats         enable
+      stats         uri /
+      stats         refresh 10s
+      stats         admin if LOCALHOST
+
+#  backends.cfg: |-
+#    listen my-backend
+#      bind *:23306
+#      option httpchk
+#
+#    listen my-second-backend
+#      bind *:16384
+
+## ServiceMonitor consumed by prometheus-operator
+serviceMonitor:
+  ## If the operator is installed in your cluster, set to true to create a Service Monitor Entry
+  enabled: false
+  interval: "15s"
+  targetLabels: []
+  podTargetLabels: []
+  metricsPort: metrics
+  metricsPath: /metrics
+  ## Namespace in which the service monitor is created
+  # namespace: monitoring
+  # Added to the ServiceMonitor object so that prometheus-operator is able to discover it
+  ## ref: https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#prometheusspec
+  additionalLabels: {}
+
+## PrometheusRule consumed by prometheus-operator
+prometheusRule:
+  enabled: false
+  ## Namespace in which the prometheus rule is created
+  # namespace: monitoring
+  ## Define individual alerting rules as required
+  ## ref: https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#rulegroup
+  ##      https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/
+  groups: {}
+  ## Added to the PrometheusRule object so that prometheus-operator is able to discover it
+  ## ref: https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#prometheusspec
+  additionalLabels: {}
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  # name:
+
+podSecurityContext: {}
+# fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+# runAsUser: 1000
+
+service:
+  type: ClusterIP
+
+## Deploy ingress for stats interface
+ingress:
+  enabled: false
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  host: host.example.com
+  path: /
+  port: metrics
+  tls: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+livenessProbe: {}
+
+readinessProbe: {}
