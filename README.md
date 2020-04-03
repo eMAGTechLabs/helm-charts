@@ -6,9 +6,9 @@ This functionality is in beta and is subject to change.
 Please look in `/charts` directory for documentation of each chart. 
 These helm chart are designed to ease installation or development of various tools.
 
-| Chart | Docker file documentation  |
-|-------| -------------------------- |
-|[haproxy](/charts/haproxy) | [https://hub.docker.com/_/haproxy](https://hub.docker.com/_/haproxy) |
+| Chart | Type | Docker file documentation  |
+|-------| -----| -------------------------- |
+|[haproxy](/charts/haproxy) | application | [https://hub.docker.com/_/haproxy](https://hub.docker.com/_/haproxy) |
 
 
 ## How to use charts
