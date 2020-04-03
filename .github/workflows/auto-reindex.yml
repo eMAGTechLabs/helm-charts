@@ -22,6 +22,8 @@ jobs:
     
     - name: Use helm latest version
       uses: azure/setup-helm@v1
+      with:
+          version: "3"
       id: install
     
     - name: Package existing charts
