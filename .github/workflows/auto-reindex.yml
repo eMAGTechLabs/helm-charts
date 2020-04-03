@@ -26,7 +26,7 @@ jobs:
     
     - name: Package existing charts
       run: |
-        index-repository.sh
+        ./index-repository.sh
     
     - name: Commit files
       run: |
