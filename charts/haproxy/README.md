@@ -8,7 +8,6 @@ Current chart version is `0.1.0`
 Source code can be found [here](https://github.com/eMAGTechLabs/helm-charts)
 
 
-
 ## Chart Values
 
 | Key | Type | Default | Description |
@@ -42,3 +41,41 @@ Source code can be found [here](https://github.com/eMAGTechLabs/helm-charts)
 | serviceMonitor.podTargetLabels | list | `[]` |  |
 | serviceMonitor.targetLabels | list | `[]` |  |
 | tolerations | list | `[]` |  |
+
+
+## Default configuration
+Default configuration for haproxy:
+```yaml
+configFiles:
+  global.cfg: |-
+    global
+      maxconn   10000
+      log       127.0.0.1 local0
+      nbproc    1
+      nbthread  1
+
+  defaults.cfg: |-
+    defaults
+      backlog   2000
+      timeout   connect 10s
+      timeout   client 30s
+      timeout   server 30s
+      timeout   check 10s
+      log       global
+      mode      tcp
+      option    httplog
+      maxconn   3000
+
+  metrics.cfg: |-
+    frontend metrics
+      mode          http
+      log           global
+      maxconn       10
+      bind          *:8404
+      option        http-use-htx
+      http-request  use-service prometheus-exporter if { path /metrics }
+      stats         enable
+      stats         uri /
+      stats         refresh 10s
+      stats         admin if LOCALHOST
+```
