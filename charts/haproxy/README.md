@@ -7,6 +7,11 @@ Current chart version is `0.1.0`
 
 Source code can be found [here](https://github.com/eMAGTechLabs/helm-charts)
 
+## Prerequisites
+- Helm v3
+- Kubernetes 1.14+
+- haproxy 2.1
+
 
 ## Chart Values
 
