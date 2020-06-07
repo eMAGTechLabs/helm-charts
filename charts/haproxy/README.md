@@ -36,6 +36,7 @@ Source code can be found [here](https://github.com/eMAGTechLabs/helm-charts)
 | resources | object | `{}` | resource limits and request for container |
 | securityContext | object | `{}` |  |
 | service.type | string | `"ClusterIP"` |  |
+| service.clusterIP | string | `""` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceMonitor.additionalLabels | object | `{}` |  |
