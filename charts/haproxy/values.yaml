@@ -121,6 +121,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
+  clusterIP: ""
 
 ## Deploy ingress for stats interface
 ingress:
