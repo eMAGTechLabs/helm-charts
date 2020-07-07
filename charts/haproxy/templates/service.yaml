@@ -6,6 +6,7 @@ metadata:
     {{- include "haproxy.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
+  clusterIP: {{ .Values.service.clusterIP | quote}}
   {{- with .Values.ports }}
   ports:
   {{- range $key, $port := . }}
