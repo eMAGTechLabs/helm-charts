@@ -2,10 +2,16 @@ haproxy
 =======
 HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
 
-
-Current chart version is `0.1.0`
-
 Source code can be found [here](https://github.com/eMAGTechLabs/helm-charts)
+
+## How to use it
+```shell script
+# add emagtechlabs repository
+helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/
+
+# install haproxy chart
+helm install emagtechlabs/haproxy
+```
 
 ## Prerequisites
 - Helm v3
