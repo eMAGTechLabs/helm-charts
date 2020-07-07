@@ -1,0 +1,37 @@
+name: Pull Request checker
+
+on: pull_request
+
+jobs:
+  lint-test:
+    strategy:
+      matrix:
+        k8s: [1.12.10, 1.14.10, 1.16.9, 1.17.2, 1.18.4]
+    runs-on: ubuntu-latest
+    env:
+      CT_CHART_DIRS: charts
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Fetch history
+        run: git fetch --prune --unshallow
+
+      - name: Run chart-testing (lint)
+        id: lint
+        uses: helm/chart-testing-action@v1.0.0-rc.1
+        with:
+          command: lint
+
+      - name: Create kind cluster
+        uses: helm/kind-action@v1.0.0-alpha.3
+        # Only build a kind cluster if there are chart changes to test.
+        if: steps.lint.outputs.changed == 'true'
+        with:
+          node_image: kindest/node:v${{ matrix.k8s }}
+          cluster_name: k8s-${{ matrix.k8s }}
+
+      - name: Run chart-testing (install)
+        uses: helm/chart-testing-action@v1.0.0-rc.1
+        with:
+          command: install

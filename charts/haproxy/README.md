@@ -15,7 +15,7 @@ helm install emagtechlabs/haproxy
 
 ## Prerequisites
 - Helm v3
-- Kubernetes 1.14+
+- Kubernetes 1.12+
 - haproxy 2.1
 
 

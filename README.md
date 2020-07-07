@@ -23,7 +23,7 @@ helm install emagtechlabs/<chartname>
 ```
 
 ## Kuberenetes Versions
-Currently the charts are manually tested against Kubernetes 1.14
+Currently the charts are automatically tested against Kubernetes 1.12, 1.14, 1.16, 1.17 and 1.18
 
 ## Repository structure
 This GitHub repository contains both sources and packages for helm charts developed by emagtechlabs.
