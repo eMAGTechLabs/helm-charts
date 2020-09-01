@@ -43,6 +43,8 @@ helm install emagtechlabs/haproxy
 | securityContext | object | `{}` |  |
 | service.type | string | `"ClusterIP"` |  |
 | service.clusterIP | string | `""` |  |
+| service.loadBalancerIP | string | `""` |  |
+| service.loadBalancerSourceRanges | list | `[]` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceMonitor.additionalLabels | object | `{}` |  |

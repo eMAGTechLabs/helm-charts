@@ -9,6 +9,13 @@ spec:
   {{- with .Values.service.clusterIP }}
   clusterIP: {{ . | quote}}
   {{- end }}
+  {{- with .Values.service.loadBalancerIP }}
+  loadBalancerIP: {{ . | quote }}
+  {{- end }}
+  {{- with .Values.service.loadBalancerSourceRanges }}
+  loadBalancerSourceRanges:
+  {{- toYaml . | nindent 2 }}
+  {{- end }}
   {{- with .Values.ports }}
   ports:
   {{- range $key, $port := . }}

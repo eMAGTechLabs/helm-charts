@@ -122,6 +122,8 @@ securityContext: {}
 service:
   type: ClusterIP
   clusterIP: ""
+  loadBalancerIP: ""
+  loadBalancerSourceRanges: []
 
 ## Deploy ingress for stats interface
 ingress:
