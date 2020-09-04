@@ -4,6 +4,7 @@ replicaCount: 1
 # image -- docker image to be used
 image:
   repository: haproxy
+  tag: 2.1-alpine
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
