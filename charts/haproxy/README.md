@@ -25,7 +25,7 @@ helm install emagtechlabs/haproxy
 | configFiles | object | `{"global.cfg": {}, "defaults.cfg": {}, "metrics.cfg": {}}` | List of haproxy config files |
 | fullnameOverride | string | `""` |  |
 | image.repository | string | `haproxy` | docker image to be used |
-| image.tag | string | `2.1-alpine` | docker image tag to be used |
+| image.tag | string | `2.2-alpine` | docker image tag to be used |
 | image.pullPolicy | string | `IfNotPresent` | Image pull policy |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations."kubernetes.io/ingress.class" | string | `"nginx"` |  |
