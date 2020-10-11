@@ -1,0 +1,85 @@
+# Default values for newrelic-php-daemon.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: newrelic/php-daemon
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 31339
+
+## config params for newrelic-php-agent.
+## Ref: https://docs.newrelic.com/docs/agents/php-agent/configuration/proxy-daemon-newreliccfg-settings
+daemonConfig:
+  ## Sets the name of the log file to use.
+  logfile: /dev/stdout
+
+  ## Sets the level of detail for messages sent to the log file.
+  ## This field has the same possible values as the agent, which are, in increasing order of detail: error|warning|info|debug
+  # loglevel: info
+
+  ## Sets the socket endpoint the daemon will listen on. This endpoint allows agents to communicate with the daemon.
+  ## This must be the same value as the agent's newrelic.daemon.address setting.
+  # address:
+
+  ## This feature was introduced in version 3.4. When enabled, the agent will create an audit log, which contains all of the data sent from the daemon to New Relic.
+  ## This data includes the full URL, date, time, and the uncompressed, un-encoded data for each request.
+  ## This allows you to observe exactly what data is sent to New Relic in order to ensure no sensitive data is included.
+  # auditlog:
+
+resources: {}
+  ## We usually recommend not to specify default resources and to leave this as a conscious
+  ## choice for the user. This also increases chances charts run on environments with little
+  ## resources, such as Minikube. If you do want to specify resources, uncomment the following
+  ## lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

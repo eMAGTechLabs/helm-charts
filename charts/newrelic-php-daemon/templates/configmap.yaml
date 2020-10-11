@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "newrelic-php-daemon.fullname" . }}
+  labels:
+  {{- include "newrelic-php-daemon.labels" . | nindent 4 }}
+data:
+  newrelic.cfg:
+  {{- range $key, $value := .Values.daemonConfig }}
+    {{ $key }}={{$value}}
+  {{- end }}
