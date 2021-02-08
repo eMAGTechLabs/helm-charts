@@ -9,6 +9,7 @@ These helm chart are designed to ease installation or development of various too
 | Chart | Type | Docker file documentation  |
 |-------| -----| -------------------------- |
 |[haproxy](/charts/haproxy) | application | [https://hub.docker.com/_/haproxy](https://hub.docker.com/_/haproxy) |
+|[newrelic-php-daemon](/charts/newrelic-php-daemon) | application | [https://hub.docker.com/r/newrelic/php-daemon](https://hub.docker.com/r/newrelic/php-daemon) |
 
 
 ## How to use charts

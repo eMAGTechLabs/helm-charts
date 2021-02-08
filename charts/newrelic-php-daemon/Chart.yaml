@@ -1,0 +1,42 @@
+apiVersion: v2
+name: newrelic-php-daemon
+description: |
+  This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon) deployment on a kubernetes cluster using Helm 3 package manager
+
+  ## How to use it
+  ```shell script
+  # add emagtechlabs repository
+  helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/
+
+  # install haproxy chart
+  helm install emagtechlabs/newrelic-php-daemon
+  ```
+
+icon: https://newrelic.com/assets/newrelic/source/SVG/NR_logo_Horizontal.svg
+home: https://github.com/eMAGTechLabs/helm-charts
+sources:
+  - https://github.com/eMAGTechLabs/helm-charts/tree/master/charts/newrelic-php-daemon
+
+maintainers:
+  - name: beniamin
+    email: beniamin.calota@gmail.com
+  - name: emagtechlabsadmin
+    email: techlabs@emag.ro
+
+
+# A chart can be either an 'application' or a 'library' chart.
+#
+# Application charts are a collection of templates that can be packaged into versioned archives
+# to be deployed.
+#
+# Library charts provide useful utilities or functions for the chart developer. They're included as
+# a dependency of application charts to inject those utilities and functions into the rendering
+# pipeline. Library charts do not define any templates and therefore cannot be deployed.
+type: application
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 0.1.0
+
+appVersion: 9.13.0

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "newrelic-php-daemon.fullname" . }}
+  labels:
+    {{- include "newrelic-php-daemon.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: daemon-sock
+      protocol: TCP
+      name: daemon-sock
+  selector:
+    {{- include "newrelic-php-daemon.selectorLabels" . | nindent 4 }}
