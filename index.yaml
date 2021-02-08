@@ -3,10 +3,9 @@ entries:
   haproxy:
   - apiVersion: v2
     appVersion: 2.2-alpine
-    created: "2020-10-11T17:26:29.156923713Z"
-    description: |
-      HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
-    digest: deec8c61d8cf824f4f1cbf72882ec4111ea88a2863121694c5700726ce1f4f06
+    created: "2021-02-08T12:04:30.486782867Z"
+    description: 'HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications '
+    digest: 82fe35b3f51fec0618def62a4bd36bb5d23211a6afeba64d74507f0567a68388
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
     maintainers:
@@ -23,9 +22,8 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2020-10-11T17:26:29.156187812Z"
-    description: |
-      HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
+    created: "2021-02-08T12:04:30.485963862Z"
+    description: 'HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 70dd8ee19b802e912e9016141b82fb146b1636954fe9ff33d80d0ad9db1f7016
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
@@ -43,9 +41,8 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2020-10-11T17:26:29.155561311Z"
-    description: |
-      HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
+    created: "2021-02-08T12:04:30.485133557Z"
+    description: 'HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: e66d3294b527986cf99533d49dbdfa8e3a40c29d480d68c0bf85759fb4ade5b4
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
@@ -63,9 +60,8 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2020-10-11T17:26:29.15493931Z"
-    description: |
-      HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
+    created: "2021-02-08T12:04:30.484108251Z"
+    description: 'HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 41d647cbb6a33a2b69a5b99c1c29f411e06c2f3394a6c38757d317e56b3d0d95
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
@@ -83,9 +79,8 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2020-10-11T17:26:29.154327509Z"
-    description: |
-      HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
+    created: "2021-02-08T12:04:30.481742138Z"
+    description: 'HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 930b81039d69d209b7901faac1d18ae78f20f597eb387d9672305516545a3d50
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
@@ -101,9 +96,8 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2020-10-11T17:26:29.153722208Z"
-    description: |
-      HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
+    created: "2021-02-08T12:04:30.48041053Z"
+    description: 'HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 153f6e1c2d3c996fd90c7f4ccaa8b249a2bf14b044a345831b7199944a60d5a4
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
@@ -119,9 +113,8 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2020-10-11T17:26:29.153061208Z"
-    description: |
-      HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
+    created: "2021-02-08T12:04:30.47864452Z"
+    description: 'HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 93fd68bc78cbdf235e99f73e6525cf1d7afced3162e1cc029c58ae0cdbec636a
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
@@ -137,9 +130,8 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2020-10-11T17:26:29.152348007Z"
-    description: |
-      HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
+    created: "2021-02-08T12:04:30.477687014Z"
+    description: 'HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 020c97efcfc3453d1bc19d32a8a594554be25ef1a325c05f95d4d04bb8537d46
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
@@ -155,9 +147,8 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2020-10-11T17:26:29.151371305Z"
-    description: |
-      HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications
+    created: "2021-02-08T12:04:30.47689321Z"
+    description: 'HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: dcd2f7c635aed08d2061e6eea5cf94df7b99c8b8fe46c4b46cb70755f24ddc27
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
@@ -171,4 +162,24 @@ entries:
     urls:
     - https://emagtechlabs.github.io/helm-charts/packages/haproxy-0.1.0.tgz
     version: 0.1.0
-generated: "2020-10-11T17:26:29.150101604Z"
+  newrelic-php-daemon:
+  - apiVersion: v2
+    appVersion: 9.13.0
+    created: "2021-02-08T12:04:30.487452471Z"
+    description: 'This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon) deployment on a kubernetes cluster using Helm 3 package manager  ## How to use it ```shell script # add emagtechlabs repository helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/  # install haproxy chart helm install emagtechlabs/newrelic-php-daemon ``` '
+    digest: 67aada348dad0524bb7cc60a52fc4976290b8823c752c1512b9da68cfde2ef81
+    home: https://github.com/eMAGTechLabs/helm-charts
+    icon: https://newrelic.com/assets/newrelic/source/SVG/NR_logo_Horizontal.svg
+    maintainers:
+    - email: beniamin.calota@gmail.com
+      name: beniamin
+    - email: techlabs@emag.ro
+      name: emagtechlabsadmin
+    name: newrelic-php-daemon
+    sources:
+    - https://github.com/eMAGTechLabs/helm-charts/tree/master/charts/newrelic-php-daemon
+    type: application
+    urls:
+    - https://emagtechlabs.github.io/helm-charts/packages/newrelic-php-daemon-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-02-08T12:04:30.475557702Z"
