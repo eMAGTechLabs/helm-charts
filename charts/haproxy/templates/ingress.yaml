@@ -2,10 +2,40 @@
 {{- $fullName := include "haproxy.fullname" . -}}
 {{- $svcPort := .Values.ports.metrics.containerPort -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $fullName }}
+  labels:
+  {{- include "haproxy.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+  {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  {{- if .Values.ingress.tls }}
+  tls:
+    {{- range .Values.ingress.tls }}
+    - hosts:
+        {{- range .hosts }}
+        - {{ . | quote }}
+      {{- end }}
+      secretName: {{ .secretName }}
+  {{- end }}
+  {{- end }}
+  rules:
+    - host: {{ .Values.ingress.host | quote }}
+      http:
+        paths:
+          - path: {{ .Values.ingress.path }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $fullName }}
+                port:
+                  name: {{ .Values.ingress.port }}
 {{- else -}}
 apiVersion: extensions/v1beta1
-{{- end }}
 kind: Ingress
 metadata:
   name: {{ $fullName }}
@@ -34,4 +64,5 @@ spec:
             backend:
               serviceName: {{ $fullName }}
               servicePort: {{ .Values.ingress.port }}
+{{- end }}
 {{- end }}

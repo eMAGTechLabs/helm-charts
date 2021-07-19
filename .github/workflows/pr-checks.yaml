@@ -6,7 +6,7 @@ jobs:
   lint-test:
     strategy:
       matrix:
-        k8s: [1.12.10, 1.14.10, 1.16.15, 1.17.17, 1.18.19, 1.19.11, 1.20.7, 1.21.2]
+        k8s: [1.12.10, 1.14.10, 1.16.15, 1.17.17, 1.18.19, 1.19.11, 1.20.7]
     runs-on: ubuntu-latest
     env:
       CT_CHART_DIRS: charts
