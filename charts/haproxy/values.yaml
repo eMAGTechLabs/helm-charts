@@ -139,6 +139,21 @@ ingress:
   port: metrics
   tls: []
 
+# https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
+# set it to "Default" if HAProxy will reach only services outside Kubernetes
+dnsPolicy: ""
+# https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config
+dnsConfig: {}
+ # nameservers:
+ #   - 1.2.3.4
+ # searches:
+ #   - ns1.svc.cluster-domain.example
+ #   - my.dns.search.suffix
+ # options:
+ #   - name: ndots
+ #     value: "2"
+ #   - name: edns0
+
 nodeSelector: {}
 
 tolerations: []
