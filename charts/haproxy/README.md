@@ -57,6 +57,8 @@ helm install emagtechlabs/haproxy
 | serviceMonitor.podTargetLabels | list | `[]` |  |
 | serviceMonitor.targetLabels | list | `[]` |  |
 | tolerations | list | `[]` |  |
+| dnsPolicy | string | `""` | [docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy) |
+| dnsConfig | object | `{}` | [docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config) |
 
 
 ## Default configuration
