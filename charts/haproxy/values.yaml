@@ -82,11 +82,25 @@ configFiles:
       stats refresh 10s
       stats admin if LOCALHOST
 
-#  backends.cfg: |-
+#  100-resolvers.cfg: |-
+#    resolvers default-resolver
+#      parse-resolv-conf
+#      resolve_retries 3
+#      timeout resolve 10s
+#      timeout retry 10s
+#      hold other 30s
+#      hold refused 30s
+#      hold nx 30s
+#      hold timeout 30s
+#      hold valid 10s
+#      hold obsolete 30s
+
+#  200-backends.cfg: |-
 #    listen my-backend
 #      bind *:23306
 #      option httpchk
-#
+#      server mysql1 mysql1.foo.tld:3306 resolvers default-resolver init-addr none maxconn 1000 check inter 5s fall 2 rise 2 port 1234
+#      server mysql2 mysql2.foo.tld:3306 resolvers default-resolver init-addr none maxconn 1000 check inter 5s fall 2 rise 2 port 1234
 #    listen my-second-backend
 #      bind *:16384
 
