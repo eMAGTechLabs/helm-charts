@@ -6,6 +6,6 @@ metadata:
   {{- include "haproxy.labels" . | nindent 4 }}
 data:
 {{- range $key, $value := .Values.configFiles }}
-  {{ $key }}: |-
+  {{ $key }}: |
   {{ $value | default "" | nindent 4 }}
 {{- end -}}
