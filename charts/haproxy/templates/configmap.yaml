@@ -5,7 +5,13 @@ metadata:
   labels:
   {{- include "haproxy.labels" . | nindent 4 }}
 data:
-{{- range $key, $value := .Values.configFiles }}
+  000-global.cfg: |
+  {{- index $.Values.configFiles "global.cfg"  | default "" | nindent 4 }}
+  001-defaults.cfg: |
+  {{- index $.Values.configFiles "defaults.cfg"  | default "" | nindent 4 }}
+  002-metrics.cfg: |
+  {{- index $.Values.configFiles "metrics.cfg"  | default "" | nindent 4 }}
+{{- range $key, $value := (omit .Values.configFiles "global.cfg" "defaults.cfg" "metrics.cfg") }}
   {{ $key }}: |
-  {{ $value | default "" | nindent 4 }}
+  {{- $value | default "" | nindent 4 }}
 {{- end -}}
