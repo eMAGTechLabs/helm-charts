@@ -10,6 +10,7 @@ These helm chart are designed to ease installation or development of various too
 |-------| -----| -------------------------- |
 |[haproxy](/charts/haproxy) | application | [https://hub.docker.com/_/haproxy](https://hub.docker.com/_/haproxy) |
 |[newrelic-php-daemon](/charts/newrelic-php-daemon) | application | [https://hub.docker.com/r/newrelic/php-daemon](https://hub.docker.com/r/newrelic/php-daemon) |
+|[netcheck](/charts/netcheck) | application | [Mirantis/k8s-netchecker-server](https://github.com/Mirantis/k8s-netchecker-server), [Mirantis/k8s-netchecker-agent](https://github.com/Mirantis/k8s-netchecker-agent) |
 
 
 ## How to use charts
@@ -24,9 +25,9 @@ helm install emagtechlabs/<chartname>
 ```
 
 ## Kuberenetes Versions
- | 1.12 | 1.14 | 1.16 | 1.17 | 1.18|1.19|1.20|1.21|
- |------|------|------|------|-----|----|----|----|
- |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
+ | 1.12 | 1.14 | 1.16 | 1.17 | 1.18 | 1.19 | 1.20 | 1.21 | 1.22 |
+ |------|------|------|------|------|------|------|------|------|
+ |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 
 ## Repository structure
 This GitHub repository contains both sources and packages for helm charts developed by emagtechlabs.

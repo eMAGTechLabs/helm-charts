@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "netchecker.fullname" . }}-server
+  labels:
+    {{- include "netchecker.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "netchecker.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "netchecker.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "netchecker.serviceAccountName" . }}-server
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: etcd-data
+          emptyDir: {}
+      containers:
+        - name: {{ .Chart.Name }}-server
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository.server }}:{{ .Values.image.tag.server }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - -v={{ .Values.config.debug }}
+            - -logtostderr
+            - -kubeproxyinit=false
+            - -endpoint=0.0.0.0:{{ .Values.service.port }}
+            - -etcd-endpoints=http://127.0.0.1:2379
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources.server | nindent 12 }}
+        - name: {{ .Chart.Name }}-etcd
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository.etcd }}:{{ .Values.image.tag.etcd }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - etcd
+            - --listen-client-urls=http://127.0.0.1:2379
+            - --advertise-client-urls=http://127.0.0.1:2379
+            - --data-dir=/var/lib/etcd
+            - --enable-v2
+            - --force-new-cluster
+          volumeMounts:
+            - mountPath: /var/lib/etcd
+              name: etcd-data
+          resources:
+            {{- toYaml .Values.resources.etcd | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

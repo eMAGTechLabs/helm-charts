@@ -1,0 +1,18 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "netchecker.serviceAccountName" . }}-server
+  labels:
+    {{- include "netchecker.labels" . | nindent 4 }}
+  {{- with .Values.serviceAccount.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+    verbs:
+      - list
+      - get 
