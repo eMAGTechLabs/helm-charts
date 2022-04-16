@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "newrelic-php-daemon.fullname" . }}-test-daemon-connection"
+  labels:
+    {{- include "newrelic-php-daemon.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wait-connection-to-start
+      image: willwill/wait-for-it
+      args: ['{{ include "newrelic-php-daemon.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
