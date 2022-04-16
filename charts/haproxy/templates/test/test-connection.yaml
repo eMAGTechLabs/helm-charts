@@ -1,0 +1,17 @@
+{{- range $name, $port := .Values.ports }}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "haproxy.fullname" $ }}-test-{{ $name }}-connection"
+  labels:
+    {{- include "haproxy.labels" $ | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wait-connection-to-start
+      image: willwill/wait-for-it
+      args: ['{{ include "haproxy.fullname" $ }}:{{ $port.containerPort }}']
+  restartPolicy: Never
+{{end}}

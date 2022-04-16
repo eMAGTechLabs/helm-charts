@@ -6,7 +6,7 @@ jobs:
   lint-test:
     strategy:
       matrix:
-        k8s: [1.12.10, 1.14.10, 1.16.15, 1.17.17, 1.18.19, 1.19.11, 1.20.7, 1.21.2]
+        k8s: [1.14.10, 1.16.15, 1.17.17, 1.18.19, 1.19.11, 1.20.7, 1.21.10, 1.22.7]
     runs-on: ubuntu-latest
     env:
       CT_CHART_DIRS: charts
@@ -18,7 +18,7 @@ jobs:
         run: git fetch --prune --unshallow
 
       - name: Set up chart-testing
-        uses: helm/chart-testing-action@v2.0.1
+        uses: helm/chart-testing-action@v2.2.1
 
       - name: Run chart-testing (list-changed)
         id: list-changed
@@ -32,7 +32,7 @@ jobs:
         run: ct lint
 
       - name: Create kind cluster
-        uses: helm/kind-action@v1.0.0
+        uses: helm/kind-action@v1.2.0
         # Only build a kind cluster if there are chart changes to test.
         if: steps.list-changed.outputs.changed == 'true'
         with:
