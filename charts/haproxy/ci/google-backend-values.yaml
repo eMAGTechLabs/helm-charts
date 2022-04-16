@@ -1,0 +1,11 @@
+---
+ports:
+  google:
+    protocol: TCP
+    containerPort: 8000
+configFiles:
+  200-backends.cfg: |
+    listen google
+      bind *:8000
+      mode http
+      server google google.com:443
