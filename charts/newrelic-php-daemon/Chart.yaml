@@ -1,4 +1,4 @@
-u7apiVersion: v2
+apiVersion: v2
 name: newrelic-php-daemon
 description: |
   This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon) deployment on a kubernetes cluster using Helm 3 package manager
@@ -37,6 +37,6 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.2.1
+version: 0.3.0
 
-appVersion: 9.18.1
+appVersion: 9.20.0
