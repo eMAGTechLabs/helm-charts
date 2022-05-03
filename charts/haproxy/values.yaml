@@ -11,6 +11,11 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+## Automatically Roll Deployments
+# ref: https://helm.sh/docs/howto/charts_tips_and_tricks/#automatically-roll-deployments
+checksumConfigMap:
+  enabled: true
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -139,6 +144,8 @@ service:
   clusterIP: ""
   loadBalancerIP: ""
   loadBalancerSourceRanges: []
+  annotations: {}
+#    key: value
 
 ## Deploy ingress for stats interface
 ingress:
@@ -177,3 +184,29 @@ affinity: {}
 livenessProbe: {}
 
 readinessProbe: {}
+
+## Additional annotations
+## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
+annotations: {}
+#  key: value
+podAnnotations: {}
+#  key: value
+
+## Extra volumes
+extraVolumes: []
+#  - name: ssl-certificate
+#    projected:
+#      sources:
+#        - secret:
+#            name: tls-secret-1
+#            items:
+#              - key: tls.crt
+#                path: tls.crt
+#        - secret:
+#            name: tls-secret-1
+#            items:
+#              - key: tls.key
+#                path: tls.crt.key
+extraVolumeMounts: []
+#  - name: ssl-certificate
+#    mountPath: /etc/ssl/private

@@ -21,8 +21,14 @@ helm install emagtechlabs/haproxy
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| annotations | object | `{}` | [annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) |
 | affinity | object | `{}` |  |
 | configFiles | object | `{"global.cfg": {}, "defaults.cfg": {}, "metrics.cfg": {}}` | List of haproxy config files |
+| checksumConfigMap.enabled | bool | true | [doc](https://helm.sh/docs/howto/charts_tips_and_tricks/#automatically-roll-deployments) |
+| dnsPolicy | string | `""` | [docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy) |
+| dnsConfig | object | `{}` | [docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config) |
+| extraVolumes | list | `[]` | [volumes](https://kubernetes.io/docs/concepts/storage/volumes/) |
+| extraVolumeMounts | list | `[]` | |
 | fullnameOverride | string | `""` |  |
 | image.repository | string | `haproxy` | docker image to be used |
 | image.tag | string | `2.2-alpine` | docker image tag to be used |
@@ -37,12 +43,14 @@ helm install emagtechlabs/haproxy
 | livenessProbe | object | `{}` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
+| podAnnotations | object | `{}` | |
 | podSecurityContext | object | `{}` |  |
 | ports | object | `{"metrics":{"containerPort":8404,"protocol":"TCP"}}` | Every port that should be exposed to others apps should be listed here |
 | readinessProbe | object | `{}` |  |
 | replicaCount | int | `1` | Number of pods to be deployed |
 | resources | object | `{}` | resource limits and request for container |
 | securityContext | object | `{}` |  |
+| service.annotations | object | `{}` |  |
 | service.type | string | `"ClusterIP"` |  |
 | service.clusterIP | string | `""` |  |
 | service.loadBalancerIP | string | `""` |  |
@@ -57,8 +65,6 @@ helm install emagtechlabs/haproxy
 | serviceMonitor.podTargetLabels | list | `[]` |  |
 | serviceMonitor.targetLabels | list | `[]` |  |
 | tolerations | list | `[]` |  |
-| dnsPolicy | string | `""` | [docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy) |
-| dnsConfig | object | `{}` | [docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config) |
 
 
 ## Default configuration
