@@ -4,6 +4,10 @@ metadata:
   name: {{ include "haproxy.fullname" . }}
   labels:
     {{- include "haproxy.labels" . | nindent 4 }}
+  {{- if .Values.annotations }}
+  annotations:
+  {{ toYaml .Values.annotations | indent 4 }}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -14,7 +18,12 @@ spec:
       labels:
         {{- include "haproxy.selectorLabels" . | nindent 8 }}
       annotations:
+      {{- if .Values.checksumConfigMap.enabled }}
         checksum/environment: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+      {{- end }}
+      {{- if .Values.podAnnotations }}
+      {{ toYaml .Values.podAnnotations | indent 8 }}
+      {{- end }}          
     spec:
     {{- if .Values.dnsPolicy }}
       dnsPolicy: "{{ .Values.dnsPolicy }}"
@@ -34,6 +43,9 @@ spec:
         - name: haproxy-config
           configMap:
             name: {{ printf "%s-%s" (include "haproxy.fullname" . ) "configmap" }}
+        {{- if .Values.extraVolumes }}
+        {{- include "tplvalues.render" (dict "value" .Values.extraVolumes "context" $) | nindent 8 }}
+        {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -65,6 +77,9 @@ spec:
           volumeMounts:
             - name: haproxy-config
               mountPath: /usr/local/etc/haproxy/
+          {{- if .Values.extraVolumeMounts }}
+          {{- include "tplvalues.render" (dict "value" .Values.extraVolumeMounts "context" $) | nindent 12 }}
+          {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
