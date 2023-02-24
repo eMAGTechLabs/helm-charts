@@ -5,7 +5,7 @@ metadata:
   labels:
   {{- include "newrelic-php-daemon.labels" . | nindent 4 }}
 data:
-  newrelic.cfg:
+  newrelic.cfg: |
   {{- range $key, $value := .Values.daemonConfig }}
     {{ $key }}={{$value}}
   {{- end }}
