@@ -1,0 +1,3 @@
+daemonConfig:
+  logfile: /dev/stdout
+  app_timeout: "2m"
