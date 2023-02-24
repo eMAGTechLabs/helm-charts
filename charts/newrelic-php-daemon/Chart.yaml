@@ -12,7 +12,7 @@ description: |
   helm install emagtechlabs/newrelic-php-daemon
   ```
 
-icon: https://newrelic.com/themes/custom/curio/assets/mediakit/NR_logo_Horizontal.svg
+icon: https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.svg
 home: https://github.com/eMAGTechLabs/helm-charts
 sources:
   - https://github.com/eMAGTechLabs/helm-charts/tree/master/charts/newrelic-php-daemon
