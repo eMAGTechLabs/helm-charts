@@ -25,9 +25,9 @@ helm install emagtechlabs/<chartname>
 ```
 
 ## Kuberenetes Versions
- | 1.12 | 1.14 | 1.16 | 1.17 | 1.18 | 1.19 | 1.20 | 1.21 | 1.22 |
- |------|------|------|------|------|------|------|------|------|
- |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
+| 1.16 | 1.17 | 1.18 | 1.19 | 1.20 | 1.21 | 1.22 | 1.29 |
+|------|------|------|------|------|------|------|------|
+|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 
 ## Repository structure
 This GitHub repository contains both sources and packages for helm charts developed by emagtechlabs.
