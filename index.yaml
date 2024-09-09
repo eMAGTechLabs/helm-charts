@@ -3,10 +3,10 @@ entries:
   haproxy:
   - apiVersion: v2
     appVersion: 2.5-alpine
-    created: "2023-03-17T17:14:13.994140462Z"
+    created: "2024-08-21T09:34:46.066268378Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
-    digest: f2efd70270f6bc92ac97073f63dc68fff2f182abce05d5b8e670dacd38d21531
+    digest: 4c95688ffad3a0312d2631770b868436b5a7e632217cd83facb4eca563542f33
     home: https://github.com/eMAGTechLabs/helm-charts
     icon: https://www.haproxy.com/wp-content/uploads/2017/06/Web-Logo.png
     maintainers:
@@ -23,7 +23,7 @@ entries:
     version: 1.4.1
   - apiVersion: v2
     appVersion: 2.5-alpine
-    created: "2023-03-17T17:14:13.993427863Z"
+    created: "2024-08-21T09:34:46.065364029Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 33b2ad47e1d7ac574379195cada079861a24fd5eb638708e1efbfe4c6b3bb4c1
@@ -43,7 +43,7 @@ entries:
     version: 1.4.0
   - apiVersion: v2
     appVersion: 2.5-alpine
-    created: "2023-03-17T17:14:13.992741264Z"
+    created: "2024-08-21T09:34:46.064870918Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 2e2777d8c6f888564cbf406bf96c9400d93880d6fb491f100fc598243426ca6a
@@ -63,7 +63,7 @@ entries:
     version: 1.3.0
   - apiVersion: v2
     appVersion: 2.2-alpine
-    created: "2023-03-17T17:14:13.992120865Z"
+    created: "2024-08-21T09:34:46.064385572Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: c83138666f69bbdf10de5f5a6eb080104ae63b0125cfb97b348b48712c3b5f6d
@@ -83,7 +83,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 2.2-alpine
-    created: "2023-03-17T17:14:13.991436566Z"
+    created: "2024-08-21T09:34:46.063935662Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 4d808d78460f8842c7d23f2ead85bdbc92eb9fc468c4e24df71476d040811f58
@@ -103,7 +103,7 @@ entries:
     version: 1.1.4
   - apiVersion: v2
     appVersion: 2.2-alpine
-    created: "2023-03-17T17:14:13.990238567Z"
+    created: "2024-08-21T09:34:46.063478237Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: dfdd52f431763d1ddf86e2aec82dc4954435408fc853de3b73718c053c8cb1f9
@@ -123,7 +123,7 @@ entries:
     version: 1.1.3
   - apiVersion: v2
     appVersion: 2.2-alpine
-    created: "2023-03-17T17:14:13.989113569Z"
+    created: "2024-08-21T09:34:46.06306169Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: c49e9192c044805c3f54f9d5fa64cb5c214317f5376c23d2d0d1e202d9dbe840
@@ -143,7 +143,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 2.2-alpine
-    created: "2023-03-17T17:14:13.98826217Z"
+    created: "2024-08-21T09:34:46.062636956Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 5ea691be3be23455279b4ffdc496f525b7e2517862ff3b7a516240d7ebd3914a
@@ -163,7 +163,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 2.2-alpine
-    created: "2023-03-17T17:14:13.987476071Z"
+    created: "2024-08-21T09:34:46.062201273Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 32354789d30ca43c2e0c045e5e5d6798ea69546b953198df8f9e8cfa02ad0b60
@@ -183,7 +183,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2023-03-17T17:14:13.986911172Z"
+    created: "2024-08-21T09:34:46.061764507Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 70dd8ee19b802e912e9016141b82fb146b1636954fe9ff33d80d0ad9db1f7016
@@ -203,7 +203,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2023-03-17T17:14:13.986359573Z"
+    created: "2024-08-21T09:34:46.06133761Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: e66d3294b527986cf99533d49dbdfa8e3a40c29d480d68c0bf85759fb4ade5b4
@@ -223,7 +223,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2023-03-17T17:14:13.985778174Z"
+    created: "2024-08-21T09:34:46.060907968Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 41d647cbb6a33a2b69a5b99c1c29f411e06c2f3394a6c38757d317e56b3d0d95
@@ -243,7 +243,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2023-03-17T17:14:13.985204775Z"
+    created: "2024-08-21T09:34:46.060472555Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 930b81039d69d209b7901faac1d18ae78f20f597eb387d9672305516545a3d50
@@ -261,7 +261,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2023-03-17T17:14:13.984661975Z"
+    created: "2024-08-21T09:34:46.060028345Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 153f6e1c2d3c996fd90c7f4ccaa8b249a2bf14b044a345831b7199944a60d5a4
@@ -279,7 +279,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2023-03-17T17:14:13.984096476Z"
+    created: "2024-08-21T09:34:46.059617047Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 93fd68bc78cbdf235e99f73e6525cf1d7afced3162e1cc029c58ae0cdbec636a
@@ -297,7 +297,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2023-03-17T17:14:13.983514777Z"
+    created: "2024-08-21T09:34:46.059171865Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: 020c97efcfc3453d1bc19d32a8a594554be25ef1a325c05f95d4d04bb8537d46
@@ -315,7 +315,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 2.1-alpine
-    created: "2023-03-17T17:14:13.982932078Z"
+    created: "2024-08-21T09:34:46.058751661Z"
     description: 'HAProxy is a free, very fast and reliable solution offering high
       availability, load balancing, and proxying for TCP and HTTP-based applications '
     digest: dcd2f7c635aed08d2061e6eea5cf94df7b99c8b8fe46c4b46cb70755f24ddc27
@@ -334,9 +334,9 @@ entries:
   netchecker:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-03-17T17:14:13.994725561Z"
+    created: "2024-08-21T09:34:46.067117299Z"
     description: A Helm chart for Kubernetes
-    digest: 4cc7c711c26d196b3ed6afc337abaaa0a166e240e19c2e5e0f4ab8387a4d1e64
+    digest: 5ee4bba5ba319309ebbc66bb629fe55d7d15713004792b3ea3b00e48af66be95
     name: netchecker
     type: application
     urls:
@@ -345,7 +345,51 @@ entries:
   newrelic-php-daemon:
   - apiVersion: v2
     appVersion: 10.6.0
-    created: "2023-03-17T17:14:13.997551457Z"
+    created: "2024-08-21T09:34:46.070050877Z"
+    description: 'This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon)
+      deployment on a kubernetes cluster using Helm 3 package manager  ## How to use
+      it ```shell script # add emagtechlabs repository helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/  #
+      install haproxy chart helm install emagtechlabs/newrelic-php-daemon ``` '
+    digest: 089b272e5ab169033caa6dd0b6f09a673e935ba223ebcf8f0adc104e96280f15
+    home: https://github.com/eMAGTechLabs/helm-charts
+    icon: https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.svg
+    maintainers:
+    - email: beniamin.calota@gmail.com
+      name: beniamin
+    - email: techlabs@emag.ro
+      name: emagtechlabsadmin
+    name: newrelic-php-daemon
+    sources:
+    - https://github.com/eMAGTechLabs/helm-charts/tree/master/charts/newrelic-php-daemon
+    type: application
+    urls:
+    - https://emagtechlabs.github.io/helm-charts/packages/newrelic-php-daemon-0.4.2.tgz
+    version: 0.4.2
+  - apiVersion: v2
+    appVersion: 10.6.0
+    created: "2024-08-21T09:34:46.069694071Z"
+    description: 'This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon)
+      deployment on a kubernetes cluster using Helm 3 package manager  ## How to use
+      it ```shell script # add emagtechlabs repository helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/  #
+      install haproxy chart helm install emagtechlabs/newrelic-php-daemon ``` '
+    digest: d8414b88ffc7f7ddeb3177147e121355b989d2af5eb2c8c6eaff17bd0a5bc83d
+    home: https://github.com/eMAGTechLabs/helm-charts
+    icon: https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.svg
+    maintainers:
+    - email: beniamin.calota@gmail.com
+      name: beniamin
+    - email: techlabs@emag.ro
+      name: emagtechlabsadmin
+    name: newrelic-php-daemon
+    sources:
+    - https://github.com/eMAGTechLabs/helm-charts/tree/master/charts/newrelic-php-daemon
+    type: application
+    urls:
+    - https://emagtechlabs.github.io/helm-charts/packages/newrelic-php-daemon-0.4.1.tgz
+    version: 0.4.1
+  - apiVersion: v2
+    appVersion: 10.6.0
+    created: "2024-08-21T09:34:46.069338156Z"
     description: 'This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon)
       deployment on a kubernetes cluster using Helm 3 package manager  ## How to use
       it ```shell script # add emagtechlabs repository helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/  #
@@ -367,7 +411,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 9.20.0
-    created: "2023-03-17T17:14:13.997064257Z"
+    created: "2024-08-21T09:34:46.068977713Z"
     description: 'This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon)
       deployment on a kubernetes cluster using Helm 3 package manager  ## How to use
       it ```shell script # add emagtechlabs repository helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/  #
@@ -389,7 +433,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 9.20.0
-    created: "2023-03-17T17:14:13.996604158Z"
+    created: "2024-08-21T09:34:46.068613643Z"
     description: 'This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon)
       deployment on a kubernetes cluster using Helm 3 package manager  ## How to use
       it ```shell script # add emagtechlabs repository helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/  #
@@ -411,7 +455,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: 9.18.1
-    created: "2023-03-17T17:14:13.996142159Z"
+    created: "2024-08-21T09:34:46.068218295Z"
     description: 'This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon)
       deployment on a kubernetes cluster using Helm 3 package manager  ## How to use
       it ```shell script # add emagtechlabs repository helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/  #
@@ -433,7 +477,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 9.18.1
-    created: "2023-03-17T17:14:13.995684659Z"
+    created: "2024-08-21T09:34:46.067865866Z"
     description: 'This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon)
       deployment on a kubernetes cluster using Helm 3 package manager  ## How to use
       it ```shell script # add emagtechlabs repository helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/  #
@@ -455,7 +499,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 9.13.0
-    created: "2023-03-17T17:14:13.99521096Z"
+    created: "2024-08-21T09:34:46.067504131Z"
     description: 'This chart bootstraps a [NewRelic PHP Daemon](https://hub.docker.com/r/newrelic/php-daemon)
       deployment on a kubernetes cluster using Helm 3 package manager  ## How to use
       it ```shell script # add emagtechlabs repository helm repo add emagtechlabs  https://emagtechlabs.github.io/helm-charts/  #
@@ -475,4 +519,4 @@ entries:
     urls:
     - https://emagtechlabs.github.io/helm-charts/packages/newrelic-php-daemon-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-17T17:14:13.982084979Z"
+generated: "2024-08-21T09:34:46.058069056Z"
