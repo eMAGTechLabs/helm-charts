@@ -6,7 +6,7 @@ jobs:
   lint-test:
     strategy:
       matrix:
-        k8s: [1.14.10, 1.16.15, 1.17.17, 1.18.19, 1.19.11, 1.20.7, 1.21.10, 1.22.7, 1.29.8]
+        k8s: [1.14.10, 1.16.15, 1.17.17, 1.18.19,1.19.11, 1.20.7, 1.21.10, 1.22.7, 1.29.8]
     runs-on: ubuntu-latest
     env:
       CT_CHART_DIRS: charts
@@ -27,7 +27,13 @@ jobs:
           if [[ -n "$changed" ]]; then
             echo "::set-output name=changed::true"
           fi
-
+      - name: Modify values.yaml for k8s < 1.19
+        uses: mikefarah/yq@v4.44.3    
+        if: startsWith(matrix.k8s, '1.18') || startsWith(matrix.k8s, '1.17') || startsWith(matrix.k8s, '1.16') || startsWith(matrix.k8s, '1.15') || startsWith(matrix.k8s, '1.14')
+        run: |
+          echo "Setting betaApiVersion to true for Kubernetes version ${{ matrix.k8s }}"
+          yq e '.autoscaling.betaApiVersion = true' -i charts/your-chart/values.yaml
+  
       - name: Run chart-testing (lint)
         run: ct lint
 
@@ -40,10 +46,4 @@ jobs:
           cluster_name: k8s-${{ matrix.k8s }}
 
       - name: Run chart-testing (install with condition)
-        run: |
-          if [[ "${{ matrix.k8s }}" < "1.19" ]]; then
-            echo "Setting betaApiVersion to true for Kubernetes version ${{ matrix.k8s }}"
-            helm upgrade --install my-release ./charts/your-chart --set autoscaling.betaApiVersion=true
-          else
-            helm upgrade --install my-release ./charts/your-chart
-          fi
+        run: ct install
