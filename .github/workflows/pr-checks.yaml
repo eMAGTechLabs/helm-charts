@@ -6,8 +6,7 @@ jobs:
   lint-test:
     strategy:
       matrix:
-        deprecated_k8s: [1.14.10, 1.16.15, 1.17.17, 1.18.19]
-        k8s: [1.19.11, 1.20.7, 1.21.10, 1.22.7, 1.29.8]
+        k8s: [1.14.10, 1.16.15, 1.17.17, 1.18.19, 1.19.11, 1.20.7, 1.21.10, 1.22.7, 1.29.8]
     runs-on: ubuntu-latest
     env:
       CT_CHART_DIRS: charts
@@ -34,17 +33,17 @@ jobs:
 
       - name: Create kind cluster >= 1.19
         uses: helm/kind-action@v1.9.0
-        if: steps.list-changed.outputs.changed == 'true' && matrix.k8s
+        if: steps.list-changed.outputs.changed == 'true' && !startsWith(matrix.k8s, '1.18') && !startsWith(matrix.k8s, '1.17') && !startsWith(matrix.k8s, '1.16') && !startsWith(matrix.k8s, '1.15') && !startsWith(matrix.k8s, '1.14')
         with:
           node_image: kindest/node:v${{ matrix.k8s }}
           cluster_name: k8s-${{ matrix.k8s }}
 
       - name: Create kind cluster < 1.19
         uses: helm/kind-action@v1.2.0
-        if: steps.list-changed.outputs.changed == 'true' && matrix.deprecated_k8s
+        if: steps.list-changed.outputs.changed == 'true' && startsWith(matrix.k8s, '1.18') && startsWith(matrix.k8s, '1.17') && startsWith(matrix.k8s, '1.16') && startsWith(matrix.k8s, '1.15') && startsWith(matrix.k8s, '1.14') 
         with:
-          node_image: kindest/node:v${{ matrix.deprecated_k8s }}
-          cluster_name: k8s-${{ matrix.deprecated_k8s }}
+          node_image: kindest/node:v${{ matrix.k8s }}
+          cluster_name: k8s-${{ matrix.k8s }}
           kubeadmConfigPatches: |
             apiVersion: kubeadm.k8s.io/v1beta1
             kind: ClusterConfiguration
