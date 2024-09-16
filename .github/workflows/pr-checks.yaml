@@ -30,9 +30,10 @@ jobs:
       - name: Modify values.yaml for k8s < 1.19
         uses: mikefarah/yq@v4.44.3    
         if: startsWith(matrix.k8s, '1.18') || startsWith(matrix.k8s, '1.17') || startsWith(matrix.k8s, '1.16') || startsWith(matrix.k8s, '1.15') || startsWith(matrix.k8s, '1.14')
-        run: |
-          echo "Setting betaApiVersion to true for Kubernetes version ${{ matrix.k8s }}"
-          yq e '.autoscaling.betaApiVersion = true' -i charts/newrelic-php-daemon/values.yaml
+        with:
+          cmd: |
+            echo "Setting betaApiVersion to true for Kubernetes version ${{ matrix.k8s }}"
+            yq e '.autoscaling.betaApiVersion = true' -i charts/newrelic-php-daemon/values.yaml
       - name: Run chart-testing (lint)
         run: ct lint
 
