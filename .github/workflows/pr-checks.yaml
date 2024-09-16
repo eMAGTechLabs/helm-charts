@@ -27,6 +27,7 @@ jobs:
           if [[ -n "$changed" ]]; then
             echo "::set-output name=changed::true"
           fi
+
       - name: Modify values.yaml for k8s < 1.19
         uses: mikefarah/yq@v4.44.3    
         if: startsWith(matrix.k8s, '1.18') || startsWith(matrix.k8s, '1.17') || startsWith(matrix.k8s, '1.16') || startsWith(matrix.k8s, '1.15') || startsWith(matrix.k8s, '1.14')
@@ -34,16 +35,27 @@ jobs:
           cmd: |
             echo "Setting betaApiVersion to true for Kubernetes version ${{ matrix.k8s }}"
             yq e '.autoscaling.betaApiVersion = true' -i charts/newrelic-php-daemon/values.yaml
+
       - name: Run chart-testing (lint)
         run: ct lint
 
-      - name: Create kind cluster
+      - name: Create kind cluster >= 1.19
         uses: helm/kind-action@v1.9.0
-        # Only build a kind cluster if there are chart changes to test.
         if: steps.list-changed.outputs.changed == 'true'
         with:
           node_image: kindest/node:v${{ matrix.k8s }}
           cluster_name: k8s-${{ matrix.k8s }}
+      - name: Create kind cluster < 1.19
+        uses: helm/kind-action@v1.2.0
+        if: startsWith(matrix.k8s, '1.18') || startsWith(matrix.k8s, '1.17') || startsWith(matrix.k8s, '1.16') || startsWith(matrix.k8s, '1.15') || startsWith(matrix.k8s, '1.14')
+        with:
+          node_image: kindest/node:v${{ matrix.k8s }}
+          cluster_name: k8s-${{ matrix.k8s }}
+          kubeadmConfigPatches: |
+            apiVersion: kubeadm.k8s.io/v1beta1
+            kind: ClusterConfiguration
+            metadata:
+              name: config
 
       - name: Run chart-testing (install with condition)
         run: ct install
