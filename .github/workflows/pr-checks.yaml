@@ -31,7 +31,7 @@ jobs:
 
       - name: Modify values.yaml for k8s < 1.19
         uses: mikefarah/yq@v4.44.3    
-        if: startsWith(matrix.k8s, '1.18') || startsWith(matrix.k8s, '1.17') || startsWith(matrix.k8s, '1.16') || startsWith(matrix.k8s, '1.15') || startsWith(matrix.k8s, '1.14')
+        if: matrix.k8s
         with:
           cmd: |
             echo "Setting betaApiVersion to true for Kubernetes version ${{ matrix.k8s }}"
@@ -46,6 +46,7 @@ jobs:
         with:
           node_image: kindest/node:v${{ matrix.k8s }}
           cluster_name: k8s-${{ matrix.k8s }}
+
       - name: Create kind cluster < 1.19
         uses: helm/kind-action@v1.2.0
         with:
