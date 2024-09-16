@@ -29,14 +29,6 @@ jobs:
             echo "::set-output name=changed::true"
           fi
 
-      - name: Modify values.yaml for k8s < 1.19
-        uses: mikefarah/yq@v4.44.3    
-        if: matrix.k8s
-        with:
-          cmd: |
-            echo "Setting betaApiVersion to true for Kubernetes version ${{ matrix.k8s }}"
-            yq e '.autoscaling.betaApiVersion = true' -i charts/newrelic-php-daemon/values.yaml
-
       - name: Run chart-testing (lint)
         run: ct lint
 
