@@ -73,6 +73,7 @@ resources: {}
 
 autoscaling:
   enabled: false
+  betaApiVersion: false
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
