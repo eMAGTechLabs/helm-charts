@@ -21,7 +21,7 @@ spec:
     - type: Resource
       resource:
         name: cpu
-  {{- if .Values.autoscaling.apiVersion }}
+  {{- if .Values.autoscaling.betaApiVersion }}
         targetAverageUtilization: {{ .Values.autoscaling.targetCPUUtilizationPercentage }}
   {{- else }}
         target:
@@ -33,7 +33,7 @@ spec:
     - type: Resource
       resource:
         name: memory
-  {{- if .Values.autoscaling.apiVersion }}
+  {{- if .Values.autoscaling.betaApiVersion }}
         targetAverageUtilization: {{ .Values.autoscaling.targetMemoryUtilizationPercentage }}
   {{- else }}
         target:
