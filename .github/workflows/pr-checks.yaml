@@ -33,6 +33,8 @@ jobs:
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.9.0
+        # Only build a kind cluster if there are chart changes to test.
+        if: steps.list-changed.outputs.changed == 'true'
         with:
           node_image: kindest/node:v${{ matrix.k8s }}
           cluster_name: k8s-${{ matrix.k8s }}
