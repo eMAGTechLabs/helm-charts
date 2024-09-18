@@ -32,6 +32,7 @@ helm install emagtechlabs/newrelic-php-daemon
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
 | autoscaling.enabled | bool | `false` |  |
+| autoscaling.betaApiVersion | bool | `false` | Set `true` if you have k8s < 1.19 |
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
